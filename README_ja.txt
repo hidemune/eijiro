@@ -16,8 +16,10 @@
 ９．同様に、辞書設定画面で「WAEI-136.dic」を「waei.txt」として作成
 １０．コマンドプロンプトで以下を実行
 
-sort eijiro.txt > eijiro_s.txt
-
+javasort -e:utf-8 -o:eijiro_s.txt eijiro.txt
+※JavaSortは、
+https://github.com/hidemune/JavaSort
+を参照してインストールしておいて下さい
 
 １１．アプリを起動して、下の大きなテキストエリアを右クリック
 １２．出てきたダイアログに、「eijiro_s.txt」と「waei.txt」のフルパスを設定
