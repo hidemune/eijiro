@@ -16,7 +16,7 @@
 ９．同様に、辞書設定画面で「WAEI-136.dic」を「waei.txt」として作成
 １０．コマンドプロンプトで以下を実行
 
-javasort -e:utf-8 -o:eijiro_s.txt eijiro.txt
+javasort -e:utf-16 -o:eijiro_s.txt eijiro.txt
 ※JavaSortは、
 https://github.com/hidemune/JavaSort
 を参照してインストールしておいて下さい
