@@ -1,4 +1,5 @@
 
+import java.awt.Font;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
@@ -23,6 +24,8 @@ import java.util.Properties;
 public class eijiro {
 public static ClassProp propC = new ClassProp();
 private static EijiroJFrame eijiroFrm;
+public static String fntName = "";
+public static String fntSize = "";
 
     /**
      * @param args the command line arguments
@@ -47,6 +50,13 @@ private static EijiroJFrame eijiroFrm;
         int width = Integer.parseInt(config.getProperty("width", "400"));
         int height = Integer.parseInt(config.getProperty("height", "300"));
         eijiroFrm.setBounds(x, y, width, height);
+        
+        fntName = config.getProperty("FontFamily", "Dialog");
+        fntSize = config.getProperty("FontSize", "14");
+        System.out.println(fntName);
+        System.out.println(fntSize);
+        Font fnt = new Font(fntName,Font.PLAIN,Integer.parseInt(fntSize));
+        eijiroFrm.setFont(fnt);
         
         String str = "";
         Toolkit kit = Toolkit.getDefaultToolkit();
@@ -82,6 +92,9 @@ private static EijiroJFrame eijiroFrm;
         
         config.setProperty("EijiroPath", propC.EijiroPath);
         config.setProperty("WaeiPath", propC.WaeiPath);
+        
+        config.setProperty("FontFamily", fntName);
+        config.setProperty("FontSize", fntSize);
         
         try {
             config.store(new OutputStreamWriter(new FileOutputStream("eijiro.properties"),"UTF-8"), "by HDM");

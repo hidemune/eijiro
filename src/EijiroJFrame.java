@@ -1,4 +1,5 @@
 
+import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
@@ -197,6 +198,16 @@ PropJFrame propFrm;
     public void setText(String str) {
         jTextField1.setText(str);
     }
+    public void setFont(Font f) {
+        jTextField1.setFont(f);
+        jSplitPane2.setFont(f);
+        jTextArea1.setFont(f);
+        jSplitPane1.setFont(f);
+        jScrollPane2.setFont(f);
+        jButton1.setFont(f);
+        
+    }
+    
     public void readFile(boolean flg) {
         String crlf = "\n";
 /*		try {
