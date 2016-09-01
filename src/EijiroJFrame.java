@@ -52,13 +52,12 @@ PropJFrame propFrm;
         jSplitPane2 = new javax.swing.JSplitPane();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
         jSplitPane3 = new javax.swing.JSplitPane();
         jSplitPane3.setDividerLocation(600);
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("英和・和英辞典");
@@ -77,7 +76,7 @@ PropJFrame propFrm;
                 jTextField1ActionPerformed(evt);
             }
         });
-        jSplitPane2.setBottomComponent(jTextField1);
+        jSplitPane2.setRightComponent(jTextField1);
 
         jButton1.setText("再検索");
         jButton1.setFocusable(false);
@@ -92,50 +91,30 @@ PropJFrame propFrm;
 
         jSplitPane3.setPreferredSize(new java.awt.Dimension(300, 70));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setName("jTextArea1"); // NOI18N
-        jTextArea1.setPreferredSize(new java.awt.Dimension(300, 65));
-        jTextArea1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jTextArea1MousePressed(evt);
-            }
-        });
-        jScrollPane2.setViewportView(jTextArea1);
-
-        jSplitPane3.setLeftComponent(jScrollPane2);
-
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
+        jTextArea2.setMinimumSize(new java.awt.Dimension(100, 13));
         jScrollPane1.setViewportView(jTextArea2);
 
         jSplitPane3.setRightComponent(jScrollPane1);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jSplitPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-        );
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane3.setViewportView(jTextArea1);
 
-        jSplitPane1.setRightComponent(jPanel1);
+        jSplitPane3.setLeftComponent(jScrollPane3);
+
+        jSplitPane1.setRightComponent(jSplitPane3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
         );
 
         pack();
@@ -166,13 +145,6 @@ PropJFrame propFrm;
         jTextField1.setText(str);
         readFile(true);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextArea1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextArea1MousePressed
-        if (evt.getButton() == MouseEvent.BUTTON3) {
-            //右クリック
-            propFrm.setVisible(true);
-        }
-    }//GEN-LAST:event_jTextArea1MousePressed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         eijiro.writeProp();
@@ -217,9 +189,8 @@ PropJFrame propFrm;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JSplitPane jSplitPane3;
@@ -236,7 +207,6 @@ PropJFrame propFrm;
         jSplitPane2.setFont(f);
         jTextArea1.setFont(f);
         jSplitPane1.setFont(f);
-        jScrollPane2.setFont(f);
         jButton1.setFont(f);
         
     }
