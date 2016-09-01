@@ -99,6 +99,7 @@ PropJFrame propFrm;
         jSplitPane3.setRightComponent(jScrollPane1);
 
         jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
         jScrollPane3.setViewportView(jTextArea1);
 
