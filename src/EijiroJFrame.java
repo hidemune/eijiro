@@ -4,7 +4,7 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
-import java.awt.event.MouseEvent;
+import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -66,6 +66,11 @@ PropJFrame propFrm;
                 formWindowClosing(evt);
             }
         });
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                formKeyReleased(evt);
+            }
+        });
 
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
@@ -74,6 +79,11 @@ PropJFrame propFrm;
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
+            }
+        });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField1KeyReleased(evt);
             }
         });
         jSplitPane2.setRightComponent(jTextField1);
@@ -94,6 +104,11 @@ PropJFrame propFrm;
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jTextArea2.setMinimumSize(new java.awt.Dimension(100, 13));
+        jTextArea2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextArea2KeyReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTextArea2);
 
         jSplitPane3.setRightComponent(jScrollPane1);
@@ -101,6 +116,14 @@ PropJFrame propFrm;
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
+        jTextArea1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextArea1KeyTyped(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextArea1KeyReleased(evt);
+            }
+        });
         jScrollPane3.setViewportView(jTextArea1);
 
         jSplitPane3.setLeftComponent(jScrollPane3);
@@ -150,6 +173,34 @@ PropJFrame propFrm;
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         eijiro.writeProp();
     }//GEN-LAST:event_formWindowClosing
+
+    private void jTextArea1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea1KeyTyped
+
+    }//GEN-LAST:event_jTextArea1KeyTyped
+
+    private void jTextArea1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea1KeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_F5) {
+            jButton1ActionPerformed(null);
+        }
+    }//GEN-LAST:event_jTextArea1KeyReleased
+
+    private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_F5) {
+            jButton1ActionPerformed(null);
+        }
+    }//GEN-LAST:event_formKeyReleased
+
+    private void jTextArea2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea2KeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_F5) {
+            jButton1ActionPerformed(null);
+        }
+    }//GEN-LAST:event_jTextArea2KeyReleased
+
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_F5) {
+            jButton1ActionPerformed(null);
+        }
+    }//GEN-LAST:event_jTextField1KeyReleased
 
     /**
      * @param args the command line arguments
