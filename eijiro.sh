@@ -1,9 +1,11 @@
 #!/bin/bash
 
 if [ $$ != `pgrep -fo $0`  ]; then
-	echo `basename $0` is already running.
+	#echo `basename $0` is already running.
 	xdotool search --desktop 0 "eijiro" windowactivate
-	exit 1
+	sleep 1
+	xte "key F5"
+	exit 0
 fi
 
 
